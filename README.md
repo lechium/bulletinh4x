@@ -27,8 +27,8 @@ NSData *imageData = UIImagePNGRepresentation(image);;
 if (imageData){
     dict[@"imageData"] = imageData;
 }
-//This notification name will change in the near future to be more project agnostic / specific
-[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.matchstic.ReProvision/displayBulletin" object:nil userInfo:dict];
+
+[[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.nito.bulletinh4x/displayBulletin" object:nil userInfo:dict];
 ```
 
 The following types are supported for images: URLs, IDs & raw data (illustrated above), I actually have yet to test the URL method, but assuming it just takes a URL in NSString format. 
