@@ -7,7 +7,7 @@ To use this library add the Dependency 'com.nito.bulletinh4x'
 Inside your project you will need to add minimal headers for NSDistributedNotificationCenter
 
 the following is sufficient, you can also put it in a separate header file if you would like.
-```
+```objective-c
 @interface NSDistributedNotificationCenter : NSNotificationCenter
 
 + (id)defaultCenter;
@@ -35,7 +35,7 @@ The following types are supported for images: URLs, IDs & raw data (illustrated 
 
 The key to send to specific a URL is @"imageURL"
 The key to specify an "ID" is "imageID" These ID's represent assets available on tvOS by default and include images like the remote, bluetooth, etc. The list of ID's i have discovered is listed below:
-```
+```objective-c
 PBSSystemBulletinImageIDAlert
 PBSSystemBulletinImageIDAudio
 PBSSystemBulletinImageIDB39
