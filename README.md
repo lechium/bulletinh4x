@@ -17,7 +17,7 @@ the following is sufficient, you can also put it in a separate header file if yo
 @end
 ```
 From there you can call a notificaiton like the following ANYWHERE from your code to create a bulletin notification.
-```
+```objective-c
 NSMutableDictionary *dict = [NSMutableDictionary new];
 dict[@"message"] = @"Your Message";
 dict[@"title"] = @"Your Title";
