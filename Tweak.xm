@@ -3,7 +3,6 @@
 @interface NSDistributedNotificationCenter : NSNotificationCenter
 
 + (id)defaultCenter;
-
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 
@@ -58,16 +57,12 @@
 
     PBBulletinService *bs = [self bulletinService];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-    //[dict setValue:@"PBSSystemBulletinImageIDRemote" forKey:@"PBSSystemBulletinImageIDKey"];
-    [dict setValue:[NSNumber numberWithInt:0] forKey:@"PBSSystemBulletinStyleKey"];
-    [dict setValue:[NSNumber numberWithInt:timeout] forKey:@"PBSSystemBulletinTimeoutKey"];
-    if (message){
-        [dict setValue:message forKey:@"PBSSystemBulletinMessageKey"];
-    }
-    if (title) [dict setValue:title forKey:@"PBSSystemBulletinTitleKey"]; 
+    dict[@"PBSSystemBulletinStyleKey"] = @0;
+    dict[@"PBSSystemBulletinTimeoutKey"] = [NSNumber numberWithInt:timeout];
+    if (message) dict[@"PBSSystemBulletinMessageKey"] = message;
+    if (title) dict[@"PBSSystemBulletinTitleKey"] = title; 
     if (imageData) dict[imageKey] = imageData;
-    Class cls = NSClassFromString(@"PBSBulletin");
-    id bull = [[cls alloc] init];
+    id bull = [[NSClassFromString(@"PBSBulletin") alloc] init];
     [bull setMessage: dict];
     [bull setServiceIdentifier: @"com.apple.TVSystemBulletinService"];
     [bull setViewControllerClassName: @"TVSBBulletinViewController"];
@@ -80,7 +75,9 @@
     %log;
     %orig;
     NSDistributedNotificationCenter* notificationCenter = [NSDistributedNotificationCenter defaultCenter];
+    //adding an additional observer that isnt ReProvision specific, eventually that notification name will get pruned out to go with one that makes more sense for the project.
     [notificationCenter addObserver:self  selector:@selector(h4xDisplayBulletin:) name:@"com.matchstic.ReProvision/displayBulletin" object:nil];
+    [notificationCenter addObserver:self  selector:@selector(h4xDisplayBulletin:) name:@"com.nito.bulletinh4x/displayBulletin" object:nil];
 }
 
 %end
