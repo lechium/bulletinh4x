@@ -1,9 +1,0 @@
-Package: com.nito.bulletinh4x
-Name: bulletinh4x
-Depends: mobilesubstrate
-Version: 1.0
-Architecture: appletvos-arm64
-Description: Display Bulletins via NSDistributedNotificationManager powered payloads.
-Maintainer: Kevin Bradley
-Author: Kevin Bradley
-Section: Tweaks

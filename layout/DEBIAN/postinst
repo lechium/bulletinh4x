@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# some lines just to pad stuff out
+
+echo 'restart:uicache'
+
