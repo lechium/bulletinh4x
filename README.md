@@ -41,6 +41,7 @@ PBSSystemBulletinImageIDAudio
 PBSSystemBulletinImageIDB39
 PBSSystemBulletinImageIDBluetooth
 PBSSystemBulletinImageIDController
+PBSSystemBulletinImageIDDoorbell
 PBSSystemBulletinImageIDKeyboard
 PBSSystemBulletinImageIDMusic
 PBSSystemBulletinImageIDPairing
@@ -48,9 +49,12 @@ PBSSystemBulletinImageIDPodcast
 PBSSystemBulletinImageIDRemote
 PBSSystemBulletinImageIDRemoteBatteryWarning
 PBSSystemBulletinImageIDRemoteCharging
+PBSSystemBulletinImageIDTapToRadar
 PBSSystemBulletinImageIDScreenSharing
 PBSSystemBulletinImageIDTV
 PBSSystemBulletinImageIDVolume
+PBSSystemBulletinImageIDRemoteExt1
+PBSSystemBulletinImageIDPower
 ```
 
 
